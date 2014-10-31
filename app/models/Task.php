@@ -18,7 +18,7 @@ class Task extends \Eloquent {
 	protected $fillable = ['title', 'description', 'responsible', 'duration', 'start', 'end', 'completed'];
 	public function member()
 	{
-		return $this->belongsTo('Member');
+		return $this->belongsTo('Member','responsible');
 	}
 
 }

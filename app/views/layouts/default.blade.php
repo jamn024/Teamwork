@@ -16,7 +16,7 @@
     <ul class="title-area">
       <li class="name">
         <h1>
-          {{ HTML::link('/','Teamwork') }}
+          {{ HTML::linkAction('tasks.index','Tasks') }}
         </h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
