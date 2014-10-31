@@ -9,8 +9,8 @@
 
       <div class="columns large-11">
         {{ HTML::linkAction('tasks.show',$task->title,[$task->id],[]) }}<br><li>
-        <small>Responsible: {{ $task->responsible }}</small><li>
-        <small>Duration: {{ $task->duration }}</small><li>
+        <small>Responsible: {{ $task->member->name . ' ' . $task->member->lastname }}</small><li>
+        <small>Duration: {{ $task->duration }} hours</small><li>
         <small>Start: {{ $task->start }}</small><li>
         <small>End: {{ $task->end }}</small><li>
       </div>
@@ -24,8 +24,8 @@
 
       <div class="columns large-11">
         {{ HTML::linkAction('tasks.show',$task->title,[$task->id],[]) }}<br><li>
-        <small>Responsible:{{ $task->responsible }}</small><li>
-        <small>Duration:{{ $task->duration }}</small><li>
+        <small>Responsible:{{ $task->member->name . ' ' . $task->member->lastname  }}</small><li>
+        <small>Duration:{{ $task->duration }} hours</small><li>
         <small>Start:{{ $task->start }}</small><li>
         <small>End:{{ $task->end }}</small><li>
       </div>

@@ -9,9 +9,12 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
-		//$tasks = Task::all();
-		$tasks = Task::orderBy('end')->get();	
-		return View::make('tasks.index', compact('tasks'));
+		$tasks = Task::all();
+		//$tasks = Task::orderBy('end')->get();			
+		$pending  = Task::where('completed',false)->orderBy('end')->get();
+		$finished = Task::where('completed',true)->orderBy('end')->get();
+		
+		return View::make('tasks.index', compact('tasks','pending', 'finished'));
 	}
 
 	/**
@@ -21,6 +24,7 @@ class TasksController extends \BaseController {
 	 */
 	public function create()
 	{
+		
 		$members = Member::lists('name','id');
 		return View::make('tasks.create',compact('members'));
 	}
