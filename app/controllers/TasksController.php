@@ -67,7 +67,7 @@ class TasksController extends \BaseController {
 	{
 		$task = Task::find($id);
 		$members = Member::lists('name','id');
-		return View::make('tasks.edit', compact('members'));
+		return View::make('tasks.edit', compact('task','members'));
 	}
 
 	/**
