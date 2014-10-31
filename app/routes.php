@@ -13,7 +13,11 @@
 
 Route::get('/', function()
 {
-return View::make('layouts.default');
+//return View::make('layouts.default');
+	$pending  = Task::where('completed',false)->orderBy('end','desc')->get();
+	$finished = Task::where('completed',true)->orderBy('end','desc')->get();
+	//$tasks = Task::orderBy('created_at','desc')->get();
+	return View::make('layouts.index', compact('pending','finished'));
 
 });
 
