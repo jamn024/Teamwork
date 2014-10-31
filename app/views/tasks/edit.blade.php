@@ -6,13 +6,16 @@
 
     {{ Form::label('title', 'Title') }}
     {{ Form::text('title') }}
+    {{ $errors->first('title','<small class="error">:message</small>') }}
 
     {{ Form::label('description', 'Description') }}
     {{ Form::textarea('description') }}
+    {{ $errors->first('description','<small class="error">:message</small>') }}
 
     {{ Form::label('responsible', 'Responsible') }}
     {{ Form::text('responsible') }}
-   
+    {{ Form::select('responsible',$members) }}
+    {{ $errors->first('responsible','<small class="error">:message</small>') }}
 
     {{ Form::label('duration', 'Duration') }}
     {{ Form::text('duration') }}

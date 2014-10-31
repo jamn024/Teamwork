@@ -10,7 +10,7 @@ class TasksController extends \BaseController {
 	public function index()
 	{
 		$tasks = Task::all();
-
+		//$tasks = Task::orderBy('created_at','desc')->get();
 		return View::make('tasks.index', compact('tasks'));
 	}
 
@@ -21,7 +21,8 @@ class TasksController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('tasks.create');
+		$members = Member::lists('name','id');
+		return View::make('tasks.create',compact('members'));
 	}
 
 	/**
@@ -65,8 +66,8 @@ class TasksController extends \BaseController {
 	public function edit($id)
 	{
 		$task = Task::find($id);
-
-		return View::make('tasks.edit', compact('task'));
+		$members = Member::lists('name','id');
+		return View::make('tasks.edit', compact('members'));
 	}
 
 	/**
