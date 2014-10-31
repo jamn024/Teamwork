@@ -3,10 +3,13 @@
   <h1>
     {{{ $task->title }}}
   </h1>
-  {{{ $task->description }}}<br>
-  {{{ $task->responsible }}}<br>
-  {{{ $task->duration }}}<br>
-  {{{ $task->start }}}<br>
-  {{{ $task->end }}}<br>
-  {{{ $task->completed }}}
+  Description: {{{ $task->description }}}<br>
+  Responsible: {{{ $task->responsible }}}<br>
+  Duration: {{{ $task->duration }}}<br>
+  Start: {{{ $task->start }}}<br>
+  End: {{{ $task->end }}}<br>
+  completed: {{{ $task->completed }}}
+
+
 @stop
+
